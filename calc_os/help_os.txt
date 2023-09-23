@@ -1,9 +1,11 @@
+// DOCUMENTATION
 https://os.phil-opp.com/freestanding-rust-binary/#introduction
 
+// COMMANDS
 rustup target add thumbv7em-none-eabihf
 cargo build --target thumbv7em-none-eabihf
 
-// UPDATE
+// UPDATE AND MEANING
 #![no_std] and #![no_main]: These are attributes used in Rust that disable the standard library (std) and the standard main() function. This means that the code is not a Rust program typical of the user's application, but can serve as an operating system kernel or a program that runs without std support.
 
 use core::panic::PanicInfo;: Imports the PanicInfo module from the core library. This module contains information about panic that may occur while the program is running.
