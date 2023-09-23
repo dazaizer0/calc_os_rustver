@@ -2,3 +2,24 @@ https://os.phil-opp.com/freestanding-rust-binary/#introduction
 
 rustup target add thumbv7em-none-eabihf
 cargo build --target thumbv7em-none-eabihf
+
+// UPDATE
+#![no_std] and #![no_main]: These are attributes used in Rust that disable the standard library (std) and the standard main() function. This means that the code is not a Rust program typical of the user's application, but can serve as an operating system kernel or a program that runs without std support.
+
+use core::panic::PanicInfo;: Imports the PanicInfo module from the core library. This module contains information about panic that may occur while the program is running.
+
+static HELLO: &[u8] = b"Hello, World!";: Creates a HELLO constant that contains a string of bytes representing the string "Hello, World!".
+
+#[panic_handler]: This is an attribute above the panic() function that identifies it as a panic handler. This function is called in case of panic and in this case it does nothing except an infinite loop.
+
+#[no_mangle]: This is an attribute above the _start() function that tells the compiler not to rename this function during compilation. _start() is the program start function.
+
+pub extern "C" fn _start() -> ! { ... }: This is the _start() function, which is the entry point of the program. It is public (pub) and declared as extern ("extern"), which means it can be called from C. It returns the type !, which means it never ends.
+
+let vga_buffer = 0xb8000 as *mut u8;: Creates a vga_buffer pointer that points to an area of VGA memory often used to output text in text mode.
+
+for (i, &byte) in HELLO.iter().enumerate() { ... }: Iterates through the bytes in the string "Hello, World!" and performs the following operations for each character.
+
+unsafe { *vga_buffer.offset(i as isize * 2) = byte; ... }: This is the code that prints the characters "Hello, World!" to the VGA memory area. Thanks to unsafe, we can perform operations on pointers without risk, but we must be careful to avoid errors.
+
+loop {}: An infinite loop that keeps the program running after printing a string.
