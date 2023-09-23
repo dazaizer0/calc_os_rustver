@@ -1,0 +1,4 @@
+https://os.phil-opp.com/freestanding-rust-binary/#introduction
+
+rustup target add thumbv7em-none-eabihf
+cargo build --target thumbv7em-none-eabihf
