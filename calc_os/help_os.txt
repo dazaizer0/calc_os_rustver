@@ -25,3 +25,7 @@ for (i, &byte) in HELLO.iter().enumerate() { ... }: Iterates through the bytes i
 unsafe { *vga_buffer.offset(i as isize * 2) = byte; ... }: This is the code that prints the characters "Hello, World!" to the VGA memory area. Thanks to unsafe, we can perform operations on pointers without risk, but we must be careful to avoid errors.
 
 loop {}: An infinite loop that keeps the program running after printing a string.
+
+#[cfg(test)]: Jest to atrybut, który informuje kompilator, że następny blok kodu jest przeznaczony tylko do testów.
+
+fn test_runner(_test: &[&dyn Fn()]): Jest to funkcja, która prawdopodobnie działa jako test runner, ale w kodzie podanym nie ma jej implementacji.
