@@ -5,6 +5,8 @@ https://os.phil-opp.com/freestanding-rust-binary/#introduction
 rustup target add thumbv7em-none-eabihf
 cargo build --target thumbv7em-none-eabihf
 
+qemu-system-x86_64 -drive format=raw,file=bootimage-calc_os.bin / cargo run // heh
+
 // UPDATE AND MEANING
 #![no_std] and #![no_main]: These are attributes used in Rust that disable the standard library (std) and the standard main() function. This means that the code is not a Rust program typical of the user's application, but can serve as an operating system kernel or a program that runs without std support.
 
@@ -25,6 +27,7 @@ for (i, &byte) in HELLO.iter().enumerate() { ... }: Iterates through the bytes i
 unsafe { *vga_buffer.offset(i as isize * 2) = byte; ... }: This is the code that prints the characters "Hello, World!" to the VGA memory area. Thanks to unsafe, we can perform operations on pointers without risk, but we must be careful to avoid errors.
 
 loop {}: An infinite loop that keeps the program running after printing a string.
+
 
 #[cfg(test)]: Jest to atrybut, który informuje kompilator, że następny blok kodu jest przeznaczony tylko do testów.
 
