@@ -1,7 +1,6 @@
 #![no_std]
 #![no_main]
-#![feature(custom_test_frameworks)]
-#![test_runner(test_runner)]
+#![allow(unused_imports)]
 
 use core::panic::PanicInfo;
 
@@ -10,12 +9,8 @@ pub extern "C" fn _start() -> ! {
     loop {}
 }
 
+// #[cfg(not(test))]
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
-    loop {}
-}
-
-#[cfg(test)]
-fn test_runner(_test: &[&dyn Fn()]) {
     loop {}
 }
