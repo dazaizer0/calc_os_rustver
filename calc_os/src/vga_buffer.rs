@@ -37,7 +37,7 @@ struct ScreenChar {
     color_code: ColorCode,
 }
 
-const BUFFER_HEIGHT: usize = 25;
+const BUFFER_HEIGHT: usize = 13;
 const BUFFER_WIDTH: usize = 80;
 
 #[repr(transparent)]
@@ -92,7 +92,7 @@ impl Writer {
 
 pub fn print_something() {
     let mut writer = Writer {
-        column_position: 0,
+        column_position: 12,
         color_code: ColorCode::new(Color::White, Color::Blue),
         buffer: unsafe { &mut *(0xb8000 as *mut Buffer) },
     };
@@ -100,6 +100,5 @@ pub fn print_something() {
     writer.write_byte(b'W');
     writer.write_string("elcome to ");
     writer.write_string("CalcOS!");
-
     writer.write_string(" Made by dazai. In development...");
 }

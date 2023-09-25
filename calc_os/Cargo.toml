@@ -5,4 +5,4 @@ authors = ["dazai"]
 
 [dependencies]
 bootloader = "0.9.23"
-volatile = "0.2.6"
+volatile = "0.5.1"
