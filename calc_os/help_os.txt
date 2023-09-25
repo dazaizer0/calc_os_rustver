@@ -6,6 +6,7 @@ rustup target add thumbv7em-none-eabihf
 cargo build --target thumbv7em-none-eabihf
 
 qemu-system-x86_64 -drive format=raw,file=bootimage-calc_os.bin / cargo run // heh
+cargo run
 
 // UPDATE AND MEANING
 #![no_std] and #![no_main]: These are attributes used in Rust that disable the standard library (std) and the standard main() function. This means that the code is not a Rust program typical of the user's application, but can serve as an operating system kernel or a program that runs without std support.
