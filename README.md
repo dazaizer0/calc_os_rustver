@@ -1,3 +1,4 @@
 # CalcOS
-![image](https://github.com/dazaizer0/CalcOS/assets/60112867/935326b6-1618-41bf-acbc-b2675d2ccc19)
-first boot image 
+![toto](https://github.com/dazaizer0/CalcOS/assets/60112867/5a511df1-92a2-4fb1-acbd-8b704766536d)
+
+'first boot image '
