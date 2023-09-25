@@ -1,4 +1,4 @@
 # CalcOS
-![toto](https://github.com/dazaizer0/CalcOS/assets/60112867/5a511df1-92a2-4fb1-acbd-8b704766536d)
+![image](https://github.com/dazaizer0/CalcOS/assets/60112867/35189dd4-1b59-4b3a-821a-65d18212447e)
 
-''' first boot on emulator [ss] '''
+- first boot on emulator [ss]
